@@ -1,0 +1,40 @@
+.CadastroProduto {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.imagem-produto{
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.detalhe-produto{
+  text-align: left;
+}
+
+.detalhe-produto h3{
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.detalhe-produto p{
+  margin: 4px;
+}
+
+.detalhe-produto strong{
+  font-weight: bold;
+}
+
+.lista-produto{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}

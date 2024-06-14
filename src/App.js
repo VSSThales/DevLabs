@@ -1,26 +1,27 @@
-import { FiSearch } from "react-icons/fi";
-import "./styles.css";
+import { useState } from "react";
+import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import Home from './pages/Home';
+import NovaVitrine from './pages/NovaVitrine';
+import Vitrine from './pages/Vitrine';
+import NavBar from "./components/NavBar";
 
-function App() {
+const App = () => {
+  const [vitrines, setVitrines] = useState([]);
+
+  const handleSaveVitrine = (vitrine) => {
+    setVitrines([...vitrines, vitrine]);
+  };
+
   return (
-    <div className="container">
-      <h1 className="title">Vitrine Virtual</h1>
-
-      <div className="containerInput">
-        <input type="text" placeholder="Produto"/>
-        <button className="buttonSearch">
-          <FiSearch size={25} color="#000"/>
-        </button>        
-
-      </div>
-
-      
-      <h2>
-        Seleçao de produtos para você!
-      </h2>
-
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={Home} />
+        <Route path="nova-vitrine" element={<NovaVitrine onSave={handleSaveVitrine}/>}/>
+        <Route path="Vitrines" element={<Vitrine vitrines={vitrines}/>}/>
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
