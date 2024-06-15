@@ -1,13 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getVitrines } from "../helpers/VitrineHelpers";
 
-const ListaVitrine = ({ ListaVitrine }) => {
+const ListaVitrine = () => {
+  const [ListaVitrine, setListaVitrine] = useState([]);
+
+  useEffect(() => {
+    setListaVitrine(getVitrines());
+  }, []);
+
   return (
     <div>
-      <h2>Vitrine Cadastradas</h2>
+      <h2>Vitrines Cadastradas</h2>
       <ul>
-        {ListaVitrine.map((ListaVitrine, index) => (
-          <li key={index}>
-            <Link to={`/ListaVitrine/${index}`}>{ListaVitrine.name}</Link>
+        {ListaVitrine.map((vitrine) => (
+          <li key={vitrine.code}>
+            <Link to={`/vitrine/${vitrine.code}`}>{vitrine.name}</Link>
           </li>
         ))}
       </ul>

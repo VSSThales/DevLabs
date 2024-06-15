@@ -1,7 +1,7 @@
-import DetalheVitrine from "../components/DetalheVitrine";
+import ListaVitrine from "../components/ListaVitrine";
 
 const Vitrine = ({vitrines}) => {
-  return <DetalheVitrine vitrines ={vitrines} />
+  return <ListaVitrine vitrines ={vitrines} />
 };
 
 export default Vitrine;
