@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../services/FakeAPI';
 import { getVitrineByCode, getVitrines, setVitrines, updateVitrine } from '../helpers/VitrineHelpers';
 import { useNavigate, useParams } from 'react-router-dom';
+import "../styles/FormularioVitrine.css"
 
 const FormularioVitrine = () => {
   const navigate = useNavigate();
@@ -36,7 +37,6 @@ const FormularioVitrine = () => {
   const validaCodeExistente = (vitrine) => {
     const listaVitrines = getVitrines()
     const listaFiltered = listaVitrines.filter((item) => item.code === vitrine.code)
-    console.log(listaFiltered);
     if (listaFiltered.length) {
       return true;
     }
@@ -69,21 +69,21 @@ const FormularioVitrine = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Nome:</label>
-        <input type="text" value={name} onChange={e => setName(e.target.value)} required />
-      </div>
-      <div>
-        <label>Código:</label>
-        <input type="text" value={code} disabled={codeVitrine} onChange={e => setCode(e.target.value)} required />
-      </div>
-      <div>
-        <label>ID de Produto(separado por virgula):</label>
-        <input type="text" value={produtoID} onChange={e => setProdutoID(e.target.value)} required />
-      </div>
-      <button type='submit'>Salvar</button>
-    </form>
+      <form className='formulario-grupo' onSubmit={handleSubmit}>
+        <div>
+          <label className='formulario-label'>Nome:</label>
+          <input className='formulario-input' type="text" value={name} onChange={e => setName(e.target.value)} required />
+        </div>
+        <div>
+          <label>Código:</label>
+          <input className='formulario-input' type="text" value={code} disabled={codeVitrine} onChange={e => setCode(e.target.value)} required />
+        </div>
+        <div>
+          <label>ID de Produto(separado por virgula):</label>
+          <input className='formulario-input' type="text" value={produtoID} onChange={e => setProdutoID(e.target.value)} required />
+        </div>
+        <button className='formulario-button' type='submit'>Salvar</button>
+      </form>
   )
 }
 

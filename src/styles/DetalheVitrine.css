@@ -1,0 +1,123 @@
+.vitrine-detalhe {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vitrine-titulo {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.vitrine-code {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.produto-titulo {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.lista-produto {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.produto-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(25% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.produto-imagem {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.produto-info {
+  margin-top: 10px;
+}
+
+.produto-descricao {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.produto-categoria {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.produto-avaliacao {
+  font-size: 14px;
+  color: #ff9900;
+  margin-bottom: 10px;
+}
+
+.produto-preco {
+  color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.edite-button {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 20px 0 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edite-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  padding: 10px 15px;
+  margin: 20px 0 10px;
+  background-color: #ff1e00;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #b30000;
+}

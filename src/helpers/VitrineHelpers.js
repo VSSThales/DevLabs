@@ -36,6 +36,7 @@ export function updateVitrine(vitrine) {
     setVitrines(listaAlterada);
   };
 }
+
 export function deleteVitrine(code) {
   const ListaVitrineLocalStorage = localStorage.getItem('Vitrines');
   if (typeof ListaVitrineLocalStorage == 'string') {

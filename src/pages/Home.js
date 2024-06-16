@@ -1,10 +1,9 @@
-import ListaVitrine from "../components/ListaVitrine";
-
-const Home = ({ vitrines }) => {
+const Home = () => {
   return (
     <div>
-      <h1>Bem Vindo à Vitrine Virtual</h1>
-      <ListaVitrine vitrines={vitrines} />
+      <h1>
+        Bem-Vindo à Vitrine Virtual
+      </h1>
     </div>
   );
 };
