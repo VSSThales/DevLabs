@@ -16,6 +16,7 @@ const ListaVitrine = () => {
         {ListaVitrine.map((vitrine) => (
           <li key={vitrine.code}>
             <Link to={`/vitrine/${vitrine.code}`}>{vitrine.name}</Link>
+            {/* <Link to={`/vitrine/edit/${vitrine.code}`}>Editar</Link> */}
           </li>
         ))}
       </ul>

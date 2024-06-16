@@ -35,4 +35,13 @@ export function updateVitrine(vitrine) {
     });
     setVitrines(listaAlterada);
   };
+}
+export function deleteVitrine(code) {
+  const ListaVitrineLocalStorage = localStorage.getItem('Vitrines');
+  if (typeof ListaVitrineLocalStorage == 'string') {
+    const listaVitrineParsed = JSON.parse(ListaVitrineLocalStorage);
+    const listaDeletada = listaVitrineParsed.filter((item) => item.code !== code);
+    localStorage.setItem('Vitrines', JSON.stringify(listaDeletada))
+      return listaDeletada;
+  };
 };

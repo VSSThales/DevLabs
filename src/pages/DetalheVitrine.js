@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api from "../services/FakeAPI";
-import '../components/styles.css';
-import { getVitrineByCode } from "../helpers/VitrineHelpers";
+import { deleteVitrine, getVitrineByCode } from "../helpers/VitrineHelpers";
 
 const DetalheVitrine = () => {
   const { code } = useParams();
@@ -37,12 +36,17 @@ const DetalheVitrine = () => {
       <div className="lista-produto">
         {produtos.map(produto => (
           <li key={produto.id}>
+            <p>{produto.category}</p>
             <img src={produto.image} alt={produto.title} width="50" />
             <p>{produto.title}</p>
+            <p>{produto.description}</p>
+            <p><strong>Rating:</strong> {produto.rating.rate} ({produto.rating.count} reviews)</p>
             <p>{produto.price} BR</p>
           </li>
         ))}
       </div>
+      <Link to={`/vitrine/edit/${vitrine.code}`}>Editar</Link>
+      <button onClick={() => deleteVitrine(vitrine.code)}>Excluir</button>
     </div>
   );
 };
