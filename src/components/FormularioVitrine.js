@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../services/FakeAPI';
+import api from '../services/fakeAPI';
 import { getVitrineByCode, getVitrines, setVitrines, updateVitrine } from '../helpers/VitrineHelpers';
 import { useNavigate, useParams } from 'react-router-dom';
 
