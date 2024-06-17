@@ -31,7 +31,7 @@ const DetalheVitrine = () => {
 
   return (
     <div className="vitrine-detalhe">
-      <h2 className="vitrine-titulo">{vitrine.name}</h2>
+      <h2 className="vitrine-titulo">Vitrine: {vitrine.name}</h2>
       <p className="vitrine-code">Código: {vitrine.code}</p>
       <h3 className="produto-titulo">Produtos:</h3>
       <div className="lista-produto">
@@ -47,7 +47,8 @@ const DetalheVitrine = () => {
         ))}
       </div>
       <Link to={`/vitrine/edit/${vitrine.code}`}><button className="edite-button">Editar Vitrine</button></Link>
-      <Link to={`/vitrines/`}><button className="delete-button" onClick={()=>deleteVitrine(vitrine.code)}>Delete Vitrine</button></Link>
+      <Link to={'/vitrines/'}><button className="edite-button">Voltar</button></Link>
+      <Link to={'/vitrines/'}><button className="delete-button" onClick={()=>deleteVitrine(vitrine.code)}>Deletar Vitrine</button></Link>
     </div >
   );
 };

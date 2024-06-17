@@ -11,7 +11,7 @@ const App = () => {
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/home" element={<Home/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="nova-vitrine" element={<NovaVitrine/>}/>
         <Route path="vitrines" element={<Vitrine/>}/>
         <Route path="vitrine/:code" element={<DetalheVitrine/>}/>

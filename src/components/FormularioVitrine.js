@@ -10,6 +10,7 @@ const FormularioVitrine = () => {
   const [name, setName] = useState('');
   const [code, setCode] = useState('');
   const [produtoID, setProdutoID] = useState('');
+  const [totalProdutos, setTotalProdutos] = useState('');
 
   useEffect(() => {
     const vitrineByCode = getVitrineByCode(codeVitrine);
@@ -19,6 +20,18 @@ const FormularioVitrine = () => {
       setProdutoID(vitrineByCode.produtoID);
     }
   }, [codeVitrine]);
+
+  useEffect(() => {
+    const fetchTotalProdutos = async () => {
+      try{
+        const totalProduto = await api.get('/products');
+        setTotalProdutos(totalProduto.data.length);
+      }catch(error){
+        console.error('Erro ao buscar o')
+      };
+    };
+    fetchTotalProdutos();
+  },[]);
 
   const validaProdutoExistente = async (vitrine) => {
     const Produto = vitrine.produtoID.map(prodId => api.get(`/products/${prodId}`));
@@ -69,21 +82,22 @@ const FormularioVitrine = () => {
   };
 
   return (
-      <form className='formulario-grupo' onSubmit={handleSubmit}>
-        <div>
-          <label className='formulario-label'>Nome:</label>
-          <input className='formulario-input' type="text" value={name} onChange={e => setName(e.target.value)} required />
-        </div>
-        <div>
-          <label>Código:</label>
-          <input className='formulario-input' type="text" value={code} disabled={codeVitrine} onChange={e => setCode(e.target.value)} required />
-        </div>
-        <div>
-          <label>ID de Produto(separado por virgula):</label>
-          <input className='formulario-input' type="text" value={produtoID} onChange={e => setProdutoID(e.target.value)} required />
-        </div>
-        <button className='formulario-button' type='submit'>Salvar</button>
-      </form>
+    <form className='formulario-grupo' onSubmit={handleSubmit}>
+      <div className='formulario-input'>
+        <label className='formulario-label'>Titulo:</label>
+        <input type="text" value={name} onChange={e => setName(e.target.value)} required />
+      </div>
+      <div className='formulario-input'>
+        <label>Código:</label>
+        <input className='formulario-input' type="text" value={code} disabled={codeVitrine} onChange={e => setCode(e.target.value)} required />
+      </div>
+      <div className='formulario-input'>
+        <label>ID de Produto(separado por virgula):</label>
+        <input type="text" value={produtoID} onChange={e => setProdutoID(e.target.value)} required />
+        <label className='total-produto'>Quantidade de produtos: {totalProdutos}</label>
+      </div>
+      <button className='formulario-button' type='submit'>Salvar</button>
+    </form>
   )
 }
 

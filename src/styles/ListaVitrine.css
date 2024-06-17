@@ -25,15 +25,35 @@
 }
 
 .vitrine-link {
+  padding: 10px;
   display: flex;
   text-decoration: none;
   color: rgb(63, 60, 60);
   font-size: 20px;
   transition: color 0.3s ease;
   gap: 5px;
-  background-color: #60a2e9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .vitrine-link:hover {
-  color: #b31500;
+  background-color: #5298e3;
+}
+
+.button-lista{
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0 10px;
+  background-color: #00aaff;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-lista:hover {
+  background-color: #b30000;
 }

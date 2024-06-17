@@ -34,7 +34,9 @@ export function updateVitrine(vitrine) {
       return item;
     });
     setVitrines(listaAlterada);
-  };
+  }
+  return [];
+  ;
 }
 
 export function deleteVitrine(code) {
