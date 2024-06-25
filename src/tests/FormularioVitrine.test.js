@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import FormularioVitrine from './FormularioVitrine';
 import api from '../services/FakeAPI';
 import { getVitrineByCode, getVitrines, setVitrines, updateVitrine } from '../helpers/VitrineHelpers';
