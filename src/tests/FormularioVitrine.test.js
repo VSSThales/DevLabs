@@ -1,12 +1,14 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import FormularioVitrine from './FormularioVitrine';
+import FormularioVitrine from '../components/FormularioVitrine';
 import api from '../services/FakeAPI';
 import { getVitrineByCode, getVitrines, setVitrines, updateVitrine } from '../helpers/VitrineHelpers';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 jest.mock('../services/FakeAPI');
+jest.mock('../styles/FormularioVitrine');
 jest.mock('../helpers/VitrineHelpers');
+
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn(),

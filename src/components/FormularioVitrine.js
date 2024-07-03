@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../services/FakeAPI';
 import { getVitrineByCode, getVitrines, setVitrines, updateVitrine } from '../helpers/VitrineHelpers';
 import { useNavigate, useParams } from 'react-router-dom';
-import "../styles/FormularioVitrine.css"
+import "./styles/FormularioVitrine.css"
 
 const FormularioVitrine = () => {
   const navigate = useNavigate();
