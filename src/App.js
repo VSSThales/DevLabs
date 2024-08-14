@@ -19,6 +19,7 @@ const App = () => {
       </Routes>
     </Router>
   );
+  console.log
 };
 
 export default App;
